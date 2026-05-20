@@ -1,0 +1,11 @@
+services:
+  ctfd-discord-bot:
+    build: .
+    container_name: ctfd-discord-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "3892:3892"
+    volumes:
+      - ./state.json:/app/state.json
